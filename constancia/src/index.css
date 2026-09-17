@@ -1,0 +1,216 @@
+:root {
+  --bg: #101614;
+  --surface: #1b2420;
+  --border: #2a3530;
+  --text: #ece9e2;
+  --text-dim: #9aa39c;
+  --accent: #e0a94b;
+  --accent-soft: #6fa287;
+  --danger: #c96a52;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+.page__header {
+  margin-bottom: 2.5rem;
+}
+
+.page__eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.page__header h1 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  font-size: 2.6rem;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.page__subtitle {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 1rem;
+}
+
+.habit-form {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.habit-form input {
+  flex: 1 1 220px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.habit-form input::placeholder {
+  color: var(--text-dim);
+}
+
+.habit-form input:focus-visible,
+.habit-row__toggle:focus-visible,
+.habit-row__delete:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 2px;
+}
+
+.habit-form__category {
+  flex: 0 1 160px;
+}
+
+.habit-form button {
+  background: var(--accent);
+  color: #1a1206;
+  border: none;
+  border-radius: 8px;
+  padding: 0 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.habit-form button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.feedback {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.feedback--error {
+  color: var(--danger);
+}
+
+.empty-state {
+  color: var(--text-dim);
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 2rem 1.2rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.habit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.habit-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.habit-row__toggle {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1.5px solid var(--text-dim);
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+
+.habit-row--done .habit-row__toggle {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.habit-row__mark {
+  width: 10px;
+  height: 10px;
+}
+
+.habit-row--done .habit-row__mark {
+  background: #1a1206;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.habit-row__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.habit-row__title {
+  font-size: 1rem;
+}
+
+.habit-row--done .habit-row__title {
+  color: var(--text-dim);
+  text-decoration: line-through;
+  text-decoration-color: var(--border);
+}
+
+.habit-row__category {
+  font-size: 0.8rem;
+  color: var(--accent-soft);
+}
+
+.habit-row__streak {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.habit-row__delete {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+}
+
+.habit-row__delete:hover {
+  color: var(--danger);
+}
