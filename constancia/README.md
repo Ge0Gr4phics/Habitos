@@ -36,7 +36,7 @@ supabase/
 ## 2. Configurar Supabase (el backend)
 
 1. Entra a [supabase.com](https://supabase.com) → **New project**.
-2. Elige un nombre, una contraseña de base de datos (guárdala de forma segura) y una región cercana.
+2. Elige un nombre, una contraseña de base de datos (guárdala) y una región cercana. 
 3. Cuando el proyecto termine de crearse, ve a **SQL Editor** (ícono de la izquierda) → **New query**.
 4. Copia y pega el contenido de `supabase/schema.sql` (está en este repo) y dale **Run**. Esto crea la tabla `habits` y las políticas de acceso.
 5. Ve a **Project Settings → API**. Ahí vas a ver dos datos que necesitas:
